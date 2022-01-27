@@ -1,0 +1,18 @@
+{
+    "name": "@tangxiaomi/get-npm-package",
+    "version": "0.0.2",
+    "main": "index.js",
+    "repository": "git@github.com:im/get-npm-package.git",
+    "author": "tangxiaomi <81195314@qq.com>",
+    "license": "MIT",
+    "devDependencies": {
+        "@tangxiaomi/eslint-config": "0.0.3"
+    },
+    "dependencies": {
+        "npm-package-arg": "^8.1.5",
+        "axios": "^0.25.0",
+        "chalk": "4.1.2",
+        "download": "^8.0.0",
+        "ora": "5.0.0"
+    }
+}
