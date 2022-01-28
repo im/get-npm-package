@@ -18,7 +18,8 @@ const TAOBAO_REGISTRY_URL = `https://registry.npm.taobao.org/`
 
 const download = async (packageName, dest, opts) => {
     const defaultOpts = {
-        url: TAOBAO_REGISTRY_URL
+        url: TAOBAO_REGISTRY_URL,
+        log: true
     }
 
     const { rawSpec, name } = npa(packageName)
@@ -41,7 +42,7 @@ const download = async (packageName, dest, opts) => {
             const versions = data.versions
             let curVersion = versions[downloadVersion]
             if (!curVersion) {
-                console.log('  ' + chalk.red(`There is no version for ${downloadVersion}`))
+                opts.log && console.log('  ' + chalk.red(`There is no version for ${downloadVersion}`))
                 spinner.stop()
                 spinner.clear()
                 return
@@ -60,11 +61,11 @@ const download = async (packageName, dest, opts) => {
             spinner.clear()
             spinner.stop()
 
-            console.log('  ')
-            console.log('  Package Name:     ' + chalk.green(name))
-            console.log('  Download Version: ' + chalk.green(downloadVersion))
-            console.log('  Latest:           ' + chalk.green(latest))
-            console.log('  Repository:       ' + chalk.green.underline(repositoryUrl))
+            opts.log && console.log('  ')
+            opts.log && console.log('  Package Name:     ' + chalk.green(name))
+            opts.log && console.log('  Download Version: ' + chalk.green(downloadVersion))
+            opts.log && console.log('  Latest:           ' + chalk.green(latest))
+            opts.log && console.log('  Repository:       ' + chalk.green.underline(repositoryUrl))
 
             var downloadOptions = {
                 extract: true,
@@ -81,8 +82,8 @@ const download = async (packageName, dest, opts) => {
                 .then(function () {
                     spinner.text = `download success ...`
                     spinner.stop()
-                    console.log('  ')
-                    console.log('  ' + chalk.green(`${packageName} download `) + chalk.yellow(`successful`))
+                    opts.log && console.log('  ')
+                    opts.log && console.log('  ' + chalk.green(`${packageName} download `) + chalk.yellow(`successful`))
                     return 'success'
 
                 })

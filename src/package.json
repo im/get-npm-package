@@ -1,0 +1,30 @@
+{
+    "name": "@tangxiaomi/cli",
+    "version": "0.0.1",
+    "main": "index.js",
+    "repository": "git@github.com:im/tangxiaomi-cli.git",
+    "author": "tangxiaomi <81195314@qq.com>",
+    "license": "MIT",
+    "bin": {
+        "tangxiaomi": "bin/tangxiaomi.js"
+    },
+    "engines": {
+        "node": "^12.0.0 || >= 14.0.0"
+    },
+    "devDependencies": {
+        "@tangxiaomi/eslint-config": "^0.0.2"
+    },
+    "dependencies": {
+        "chalk": "^4.1.2",
+        "commander": "^8.3.0",
+        "execa": "^1.0.0",
+        "express": "^4.17.2",
+        "inquirer": "^8.2.0",
+        "leven": "^3.1.0",
+        "minimist": "^1.2.5",
+        "net": "^1.0.2",
+        "open": "^8.4.0",
+        "semver": "^7.3.4",
+        "serve-index": "^1.9.1"
+    }
+}
