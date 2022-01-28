@@ -1,6 +1,6 @@
 {
     "name": "get-npm-package",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "main": "index.js",
     "repository": "git@github.com:im/get-npm-package.git",
     "author": "tangxiaomi <81195314@qq.com>",
